@@ -1,0 +1,47 @@
+point p 70 80
+point p_s 70 20
+midpoint O p p_s
+
+line l_n p p_s
+perp l O l_n
+parallel l_p p l
+parallel l_p_s p_s l
+
+cmark_lt p
+cmark_lb p_s
+
+color 250 120 120
+point tr 140 80
+fillrectangle O tr
+
+color 120 120 250
+point br 140 20
+fillrectangle O br
+
+color 120 250 120
+point bl 0 20
+fillrectangle O bl
+
+color 250 250 120
+point tl 0 80
+fillrectangle O tl
+
+color 0 0 0
+
+drawline l
+drawsegment p p_s
+drawline l_p
+drawline l_p_s
+
+point Rtr 105 65
+point Rbr 105 35
+point Rtl 35 65
+point Rbl 35 35
+
+printat Rtr {R_tr}
+printat Rbr {Rbr}
+printat Rtl {Rtl}
+printat Rbl {Rbl}
+
+point L 135 53
+printat L {l}

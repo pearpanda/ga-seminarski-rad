@@ -39,7 +39,7 @@ u decembru 2016. godine na sajtu arXiv. Autori rada su:
 	u Bajrojtu. Primarni fokus istraživanja mu je računarska geometrija.
 \end{itemize}
 
-\section{Uvod}
+\section{O problemima obrađenim u radu}
 
 U radu autori opisuju dva usko vezana problema i predlažu dva algoritma koji se mogu koristiti za njihovo rešavanje.
 
@@ -72,7 +72,11 @@ pri čemu se njihovi rezultati ne mogu proširiti na problem najmanje površine.
 
 Dva slična problema koja su takođe razmatrana su traženje najmanjeg diska koji sadrži barem $k$ tačaka, kao i traženje najmanjeg pravougaonika proizvoljne orijentacije koji sadrži barem $k$ tačaka.
 
-\section{Kutija najmanje površine koja pokriva barem $k$ tačaka}
+\section{Algoritmi opisani u radu}
+
+U nastavku su predstavljene osnovne ideje algoritama koje su autori predložili kao rešenje ranije pomenutih problema pokrivanja tačaka kutijom.
+
+\subsection{Kutija najmanje površine koja pokriva barem $k$ tačaka}
 
 Za rešenje prvog problema, autori rada predlažu tehniku podeli-pa-vladaj u kojoj skup tačaka dele na približno jednake skupove. Geometrijski,
 tačke dele horizontalnom pravom, i onda rešavaju problem traženja najbolje kutije koja seče tu pravu razlaganjem na veći broj manjih problema.
@@ -103,13 +107,14 @@ Za proizvoljan skup tačaka $Q$, tačku $q \in Q$ i broj $k$, autori uočavaju k
 \caption{Prikaz razmatranih kutija gde je $q$ na donjoj ili gornjoj ivici za $k = 5$.}
 \label{fig:q-kutije}
 \end{subfigure}
+\caption{Pojmovi u rešenju problema traženja kutije najmanje površine.}
 \end{figure}
 
 Generisanje podskupova $Q_p$ i uvođenje prethodnog koncepta opravdava dokazano tvrđenje autora da, ukoliko optimalna kutija za neko $k' \leqslant k$ seče pravu $\ell$, mora postojati $p_0 \in P$ takvo da kutija koju daje prethodni algoritam primenjen na $Q_{p_0}$, $p_0$ i $k'$ je takođe optimalna kutija. Intuitivno, optimalna kutija mora da ima neke tačke iz $P$ na gornjoj i donjoj ivici, $t^\ast$ i $b^\ast$. Može se pokazati da je optimalna kutija podskup $Q_{t^\ast}$ ili $Q_{b^\ast}$, zbog čega će algoritam, po definiciji, dati optimalno rešenje.
 
 Primetimo da, pošto je $k' \leqslant k$ proizvoljno, možemo unapred da izračunamo skupove $Q_p$ i da ih koristimo za više upita. Ovaj pristup se koristi u aproksimativnom algoritmu koji rešava drugi problem, gde se vrši binarna pretraga po rešenju.
 
-\section{Kutija date površine koja pokriva najviše tačaka}
+\subsection{Kutija date površine koja pokriva najviše tačaka}
 
 Algoritam za približno određivanje kutije date površine koja pokriva najviše tačaka, koji autori predstavljaju, ima tri faze. Neka je $\kappa^\ast (P, \alpha)$ najveći broj tačaka koji pokriva kutija površine $\alpha$.
 
